@@ -6,7 +6,7 @@
 /*   By: tyavroya <tyavroya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 17:31:08 by tyavroya          #+#    #+#             */
-/*   Updated: 2024/01/28 18:15:13 by tyavroya         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:25:16 by tyavroya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 static	void	_move_ptrs(char **left, char **right, char const *set)
 {
-	while (ft_strchr(set, **left))
+	while (((*left)) && ft_memchr(set, **left, ft_strlen(set)))
 		++(*left);
-	while (ft_strchr(set, **right))
+	while (((*right) >= (*left)) && ft_memchr(set, **right, ft_strlen(set)))
 		--(*right);
 }
 
@@ -57,3 +57,8 @@ static	char	*_allocate(char const *src, size_t const dstsize)
 		ft_strlcpy(dst, src, dstsize);
 	return (dst);
 }
+// #include <stdio.h>
+
+// int main () {
+// 	printf("%s\n", ft_strtrim("aaaaaaaaaa", "a"));
+// }

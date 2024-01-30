@@ -6,7 +6,7 @@
 /*   By: tyavroya <tyavroya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:55:17 by tyavroya          #+#    #+#             */
-/*   Updated: 2024/01/28 20:21:32 by tyavroya         ###   ########.fr       */
+/*   Updated: 2024/01/30 13:09:41 by tyavroya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ t_list	*ft_lstnew(void *content)
 	if (!node)
 		return (NULL);
 	node->content = content;
+	node->next = 0;
 	return (node);
 }
